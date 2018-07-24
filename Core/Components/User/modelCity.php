@@ -30,8 +30,8 @@ class modelCity extends BaseModel
 
   function create ($data){
     $DB = MySql::getInstance();
-    $data ['city_name'] = Request::$data['_GET']['city_name'];
-    $ret = $DB->insert ($this->table, $data);
+    $this->data ['city_name'] = Request::$data['_GET']['city_name'];
+    $ret = $DB->insert ($this->table, $this->data);
     return $ret;
 
   }
